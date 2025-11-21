@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import fetch from 'node-fetch';
+import cors from 'cors'; // ✅ ADDED CORS IMPORT
 
 dotenv.config();
 
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(cors()); // ✅ ADDED CORS MIDDLEWARE
 
 // Root route for testing
 app.get('/', (req, res) => {
